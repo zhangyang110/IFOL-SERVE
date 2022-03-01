@@ -1,0 +1,19 @@
+{
+  "name": "ifol-serve",
+  "version": "1.0.0",
+  "description": "IFOL SERVE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangyang110/IFOL-SERVE.git"
+  },
+  "author": "ZY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangyang110/IFOL-SERVE/issues"
+  },
+  "homepage": "https://github.com/zhangyang110/IFOL-SERVE#readme"
+}
