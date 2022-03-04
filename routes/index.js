@@ -19,4 +19,18 @@ router.post('/getHomeCarousel', function (req, res, next) {
 
 });
 
+router.post('/postImg', function (req, res, next) {
+  console.log(req);
+  console.log(res);
+  let data = {
+    name: 'xhm',
+    age: 12
+  }
+  res.json({
+    code: 0,
+    msg: 'ok',
+    data: data
+  });
+});
+
 module.exports = router;
