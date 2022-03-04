@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var form = require('../modules/index');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -20,8 +21,9 @@ router.post('/getHomeCarousel', function (req, res, next) {
 });
 
 router.post('/postImg', function (req, res, next) {
-  console.log(req);
-  console.log(res);
+  console.log(req.fields)
+  console.log(req.files)
+  // console.log(res);
   let data = {
     name: 'xhm',
     age: 12
@@ -29,7 +31,6 @@ router.post('/postImg', function (req, res, next) {
   res.json({
     code: 0,
     msg: 'ok',
-    data: data
   });
 });
 

@@ -47,7 +47,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.use(formidable());  // 中间件
+app.use(formidable({
+  encoding: 'utf-8',
+  uploadDir: '/ifol/imgs',
+  multiples: true, // req.files to be arrays of files
+}));  // 中间件
 
 
 // catch 404 and forward to error handler
