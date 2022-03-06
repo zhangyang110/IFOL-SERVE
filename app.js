@@ -8,14 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const bp = require('body-parser');
 var app = express();
-
-const formidable = require('express-formidable') // 引入包用来解析 formdata
 // 使用bp包之前需要先进行配置，因为bp默认采用的是qs包进行url编码转换
 // 如果希望使用核心模块进行处理，必须进行以下设置：
 // 下面这句话的含义为：使用核心模块querystring进行处理操作
 app.use(bp.urlencoded({ extended: false }));
-
-
 
 /**
 * @author MasterYi 2022-03-02
@@ -39,20 +35,10 @@ app.use(allowCors);//允许跨域
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
-app.use(formidable({
-  encoding: 'utf-8',
-  uploadDir: '/ifol/imgs',
-  multiples: true, // req.files to be arrays of files
-}));  // 中间件
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
